@@ -1,0 +1,82 @@
+<div class="title">
+    <h3>Feedback</h3>
+</div>
+<form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()" class="secondary-form">
+    <div class="flex-box">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" formControlName="name" placeholder="Enter Name" [class.is-invalid]="(feedbackForm.controls.name.invalid && 
+        (feedbackForm.controls.name.dirty || feedbackForm.controls.name.touched) && isFormSubmitted)">
+        <div *ngIf="(feedbackForm.controls.name.invalid && (feedbackForm.controls.name.dirty || feedbackForm.controls.name.touched) && isFormSubmitted)" class="error-msg">
+            <p *ngIf="feedbackForm.controls.name.hasError('required')">
+                Name is required
+            </p>
+            <p *ngIf="!feedbackForm.controls.name.hasError('required')">
+                Invalid Name</p>
+        </div>
+    </div>
+    <div class="flex-box">
+        <label for="company_name">Company Name</label>
+        <input type="text" class="form-control" id="company_name" formControlName="company_name" placeholder="Enter Company Name" [class.is-invalid]="(feedbackForm.controls.company_name.invalid && 
+        (feedbackForm.controls.company_name.dirty || feedbackForm.controls.company_name.touched) && isFormSubmitted)">
+        <div *ngIf="(feedbackForm.controls.company_name.invalid && (feedbackForm.controls.company_name.dirty || feedbackForm.controls.company_name.touched) && isFormSubmitted)" class="error-msg">
+            <p *ngIf="feedbackForm.controls.company_name.hasError('required')">
+                Company Name is required
+            </p>
+            <p *ngIf="!feedbackForm.controls.company_name.hasError('required')">
+                Invalid Company Name</p>
+        </div>
+    </div>
+    <div class="flex-box">
+        <label for="job_title">Company Name</label>
+        <input type="text" class="form-control" id="job_title" formControlName="job_title" placeholder="Enter Job Title" [class.is-invalid]="(feedbackForm.controls.job_title.invalid && 
+        (feedbackForm.controls.job_title.dirty || feedbackForm.controls.job_title.touched) && isFormSubmitted)">
+        <div *ngIf="(feedbackForm.controls.job_title.invalid && (feedbackForm.controls.job_title.dirty || feedbackForm.controls.job_title.touched) && isFormSubmitted)" class="error-msg">
+            <p *ngIf="feedbackForm.controls.job_title.hasError('required')">
+                Job Title is Required
+            </p>
+            <p *ngIf="!feedbackForm.controls.job_title.hasError('required')">
+                Invalid Job title</p>
+        </div>
+    </div>
+    <div class="flex-box">
+        <label for="year">Years In Current Role</label>
+        <input type="text" class="form-control" id="year" formControlName="year" placeholder="Enter Years" [class.is-invalid]="(feedbackForm.controls.year.invalid && 
+        (feedbackForm.controls.year.dirty || feedbackForm.controls.year.touched) && isFormSubmitted)">
+        <div *ngIf="(feedbackForm.controls.year.invalid && (feedbackForm.controls.year.dirty || feedbackForm.controls.year.touched) && isFormSubmitted)" class="error-msg">
+            <p *ngIf="feedbackForm.controls.year.hasError('required')">
+                Years is required
+            </p>
+            <p *ngIf="!feedbackForm.controls.year.hasError('required')">
+                Invalid Year</p>
+        </div>
+    </div>
+    <div class="flex-box">
+        <label for="email">Email</label>
+        <input type="text" class="form-control" id="email" formControlName="email" placeholder="Enter email" [class.is-invalid]="(feedbackForm.controls.email.invalid && 
+        (feedbackForm.controls.email.dirty || feedbackForm.controls.email.touched) && isFormSubmitted)">
+        <div *ngIf="(feedbackForm.controls.email.invalid && (feedbackForm.controls.email.dirty || feedbackForm.controls.email.touched) && isFormSubmitted)" class="error-msg">
+            <p *ngIf="feedbackForm.controls.email.hasError('required')">
+                Email is required
+            </p>
+            <p *ngIf="!feedbackForm.controls.email.hasError('required')">
+                Invalid Email</p>
+        </div>
+    </div>
+    <div class="flex-box">
+        <label for="feedback">Feedback</label>
+        <textarea type="text" class="form-control" id="feedback" formControlName="feedback" placeholder="Enter Feedback" [class.is-invalid]="(feedbackForm.controls.feedback.invalid && 
+        (feedbackForm.controls.feedback.dirty || feedbackForm.controls.feedback.touched) && isFormSubmitted)">
+        </textarea>
+        <div *ngIf="(feedbackForm.controls.feedback.invalid && (feedbackForm.controls.feedback.dirty || feedbackForm.controls.feedback.touched) && isFormSubmitted)" class="error-msg">
+            <p *ngIf="feedbackForm.controls.feedback.hasError('required')">
+                Feedback is required
+            </p>
+            <p *ngIf="!feedbackForm.controls.feedback.hasError('required')">
+                Invalid Feedback</p>
+        </div>
+    </div>
+    <div class="col-6 text-right">
+        <button type="submit" class="btn btn-primary sm">Submit</button>
+    </div>
+</form>
+
